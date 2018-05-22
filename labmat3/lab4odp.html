@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>lab4odp</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-21"><meta name="DC.source" content="lab4odp.m"><style type="text/css">
+      --><title>lab4odp</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-22"><meta name="DC.source" content="lab4odp.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">zadanie J</a></li><li><a href="#2">zadanie L</a></li></ul></div><h2 id="1">zadanie J</h2><pre class="codeoutput">
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">zadanie J</a></li><li><a href="#2">zadanie K</a></li><li><a href="#3">zadanie L.1</a></li><li><a href="#4">zadanie L.2</a></li><li><a href="#5">zadanie L.3</a></li><li><a href="#6">zadanie L.4</a></li></ul></div><h2 id="1">zadanie J</h2><pre class="codeoutput">
 stats = 
 
   struct with fields:
@@ -82,27 +82,107 @@ p =
 
     0.0255
 
-</pre><h2 id="2">zadanie L</h2><img vspace="5" hspace="5" src="lab4odp_01.png" alt=""> <img vspace="5" hspace="5" src="lab4odp_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+</pre><h2 id="2">zadanie K</h2><pre class="codeoutput">
+ans =
+
+        1000
+
+
+statsK = 
+
+  struct with fields:
+
+    chi2stat: 27.4772
+          df: 26
+       edges: [1&times;28 double]
+           O: [1&times;27 double]
+           E: [1&times;27 double]
+
+
+pK =
+
+    0.3847
+
+</pre><h2 id="3">zadanie L.1</h2><img vspace="5" hspace="5" src="lab4odp_01.png" alt=""> <h2 id="4">zadanie L.2</h2><img vspace="5" hspace="5" src="lab4odp_02.png" alt=""> <h2 id="5">zadanie L.3</h2><pre class="codeoutput">
+statsL3 = 
+
+  struct with fields:
+
+    chi2stat: 4.2750
+          df: 8
+       edges: [1&times;10 double]
+           O: [10 36 121 223 237 208 109 44 12]
+           E: [1&times;9 double]
+
+
+pL3 =
+
+    0.8315
+
+</pre><h2 id="6">zadanie L.4</h2><pre class="codeoutput">
+statsL4 = 
+
+  struct with fields:
+
+    chi2stat: 4.2751
+          df: 8
+       edges: [1&times;10 double]
+           O: [10 36 121 223 237 208 109 44 12]
+           E: [1&times;9 double]
+
+
+pL4 =
+
+    0.8315
+
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% zadanie J
 X1=lab4.X1; X2=lab4.X2;
-[h,p,stats] = chi2gof([1 2 3 4 5 6 7],'freq',X1,'expected',X2,'ctrs',[1:7],'nparams',0);
-stats
+bins=1:7;
+[h,p,stats] = chi2gof(bins,'Ctrs',bins,'frequency',X1,'Expected',X2);
+%[h,p,stats] = chi2gof([1:10],'freq',X1,'expected',X2,'ctrs',[1:10],'nparams',0);
+stats 
 p
-% zadanie K
-%XK=lab4S1.k1+lab4S1.k2+lab4S1.k3+lab4S1.k4+lab4S1.k5+lab4S1.k6+lab4S1.k7+lab4S1.k8+lab4S1.k9+lab4S1.k10;
-%histogram(XK)
-%XX = [10:1:60];
+%% zadanie K
+XK=lab4S1.k1+lab4S1.k2+lab4S1.k3+lab4S1.k4+lab4S1.k5+lab4S1.k6+lab4S1.k7+lab4S1.k8+lab4S1.k9+lab4S1.k10;
+bins=10:60;
+freqXK=hist(XK,bins); 
+sum(freqXK)
+nk=length(freqXK);
+XKnte=1000*kostkiS1.pr;
+[hK,pK,statsK] = chi2gof(bins,'Ctrs',bins,'frequency',freqXK,'expected',XKnte);
+statsK
+pK
+%XX = [10:.1:60];
 %normXK=1000*normpdf(XX,35,5*sqrt(7/6));
-%[hK,pK,statsK] = chi2gof([10:60],'freq',XK,'expected',normXK,'ctrs',[10:60],'nparams',0);
-%% zadanie L
+%plot(normXK)
+%[hK,pK,statsK] = chi2gof([1:10],'freq',freqXK,'expected',XK,'ctrs',[1:10],'nparams',0);
+%% zadanie L.1
 XL=lab4S2.m1+lab4S2.m2+lab4S2.m3+lab4S2.m4+lab4S2.m5+lab4S2.m6+lab4S2.m7+lab4S2.m8+lab4S2.m9+lab4S2.m10;
 histogram(XL)
+
+%% zadanie L.2
 hxl=figure; histogram(XL); 
 %histogram(X,10,'Normalization','pdf','FaceColor',[1,1,1]);
-binXL=binopdf([0:9],10,1/2);
+binXL=binopdf([0:10],10,1/2);
 bar(binXL,'r'); hold on
 h=histogram(XL,10,'Normalization','pdf','FaceColor',[1,0.6,1]); hold on
 h.FaceAlpha = 0.2;
+
+%% zadanie L.3
+binsL=0:10;
+freqXL=hist(XL, binsL);
+binompdfXL=1000*[0.000977, 0.009766, 0.043945, 0.117188, 0.205078, 0.246094, 0.205078, 0.117188, 0.043945, 0.009766, 0.000977];
+[hL,pL3,statsL3] = chi2gof(binsL,'Ctrs', binsL,'freq',freqXL,'expected',binompdfXL);
+statsL3
+pL3
+
+%% zadanie L.4
+Tpd=1000*[0.000976563; 0.009765625; 0.043945313; 0.1171875; 0.205078125; 0.24609375; 0.205078125; 0.1171875; 0.043945313; 0.009765625; 0.000976563];
+[hL4,pL4,statsL4] = chi2gof(binsL,'Ctrs', binsL,'freq',freqXL,'expected', Tpd);
+statsL4
+pL4
+
 ##### SOURCE END #####
 --></body></html>
