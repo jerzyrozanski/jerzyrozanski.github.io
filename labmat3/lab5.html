@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">zadanie M</a></li><li><a href="#3">stderr</a></li><li><a href="#4">zadanie N</a></li></ul></div><h2 id="2">zadanie M</h2><img vspace="5" hspace="5" src="lab5_01.png" alt=""> <h2 id="3">stderr</h2><img vspace="5" hspace="5" src="lab5_02.png" alt=""> <h2 id="4">zadanie N</h2><p>For Loop</p><img vspace="5" hspace="5" src="lab5_03.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">zadanie M</a></li><li><a href="#3">stderr</a></li><li><a href="#4">zadanie N</a></li></ul></div><h2 id="2">zadanie M</h2><img vspace="5" hspace="5" src="lab5_01.png" alt=""> <h2 id="3">stderr</h2><img vspace="5" hspace="5" src="lab5_02.png" alt=""> <h2 id="4">zadanie N</h2><img vspace="5" hspace="5" src="lab5_03.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 rng('default') % For reproducibility
 mwzrost = normrnd(180,9, 1000, 1); 
@@ -76,7 +76,6 @@ mwzrost = normrnd(180,9, 1000, 1);
 %plot(x,y);
 a = -29; b = 38;
 t = (b-a).*rand(365,1) + a;
-% For Loop
 mn=mean(mwzrost);
 theSum = 0; % Initialize
 SMK=0;
@@ -96,7 +95,7 @@ plot(av, 'black', 'Linewidth',1.5)
 plot(sqrt(sx), 'red', 'Linewidth',1.5)
 
 %% zadanie N
-% For Loop
+
 tmn=mean(t);
 tSum = 0; % Initialize
 tSMK=0;
