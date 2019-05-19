@@ -1,5 +1,4 @@
-﻿
-<h1>Laboratorium MAT-3</h1> <br>
+﻿<h1>Laboratorium MAT-3</h1> <br>
 
 Aplikacje używane w pracowni komputerowej (do wyboru):
 <ul>
@@ -13,15 +12,15 @@ Aplikacje używane w pracowni komputerowej (do wyboru):
 
 <h2>Excel/VBA</h2>
 
-Uwagi dotyczące zadań przygotowawczych przekazywane są podczas zajęć.
+Uwagi dotyczące rozwiązań dla zadań przygotowawczych przekazywane są podczas zajęć.
 
 <h2>R</h2>
 
 Pobranie danych z arkusza lab0.xls dla wszystkich przykładów: <br>
 
 <code> 
-> library(openxlsx) <br>
-> X <- read.xlsx("lab0.xlsx", sheet = 1) <br>
+> library(readxl) <br>
+> X <- read_excel("lab0.xlsx") <br>
 > head(X) <br>
 </code>
 
@@ -29,26 +28,38 @@ Pobranie danych z arkusza lab0.xls dla wszystkich przykładów: <br>
 
 <br><i>Rozwiązanie:</i><br>
 <code>
+> x=X$wiek; y=X$wykształcenie; <br>
 > boxplot(x~y) <br>
-> aggregate(x~y, data=lab1, FUN="quantile")<br>
-> h=hist(x)<br>
-> h$counts<br>
-> rp=hist(x, freq=FALSE, breaks=60); #plot(density(x), xlim = c(1, 100))<br>
-> plot(ecdf(x))<br>
 </code>
 
 <img src="A-r.png">
 
  <br><br> Zadanie <b>C</b>. Histogram: <br>
 
+<br><i>Rozwiązanie:</i><br>
+<code>
+> x=X$wiek<br>
+> hist(x)<br>
+</code>
 <img src="C-r.png">
 
 
  <br><br> Zadanie <b>D</b>. Wykres rozkładu prawdopodobieństwa: <br>
 
+<br><i>Rozwiązanie:</i><br>
+<code>
+> x=X$wiek<br>
+> plot(density(x), xlim = c(1, 100))<br>
+</code>
 <img src="D-r.png">
 
  <br><br> Zadanie <b>E</b>. Wykres dystrybuanty: <br>
+
+<br><i>Rozwiązanie:</i><br>
+<code>
+> x=X$wiek<br>
+> plot(ecdf(x))<br>
+</code>
 
 <img src="E-r.png">
 
