@@ -1,6 +1,87 @@
+﻿
 <h1>Laboratorium MAT-3</h1> <br>
- 
-MATLAB <br>
- <span style="font-size: 150%;">
-[<a href="https://jerzro.github.io/labmat3/lab1">1</a>] [<a href="https://jerzro.github.io/labmat3/lab2">2</a>] [<a href="https://jerzro.github.io/labmat3/lab3">3</a>] [<a href="https://jerzro.github.io/labmat3/lab4odp">4</a>] [<a href="https://jerzro.github.io/labmat3/lab5">5</a>]
-</span>
+
+Aplikacje używane w pracowni komputerowej (do wyboru):
+<ul>
+<li>Excel/VBA</li>
+<li>The R Project for Statistical Computing</li>
+<li>MATLAB</li>
+</ul>
+</ul>
+
+<br>
+
+<h2>Excel/VBA</h2>
+
+Uwagi dotyczące zadań przygotowawczych przekazywane są podczas zajęć.
+
+<h2>R</h2>
+
+Pobranie danych z arkusza lab0.xls dla wszystkich przykładów: <br>
+
+<code> 
+> library(openxlsx) <br>
+> X <- read.xlsx("lab0.xlsx", sheet = 1) <br>
+> head(X) <br>
+</code>
+
+<br> Zadanie <b>A</b>. Wykresy typu boxplot: <br>
+
+<br><i>Rozwiązanie:</i><br>
+<code>
+> boxplot(x~y) <br>
+> aggregate(x~y, data=lab1, FUN="quantile")<br>
+> h=hist(x)<br>
+> h$counts<br>
+> rp=hist(x, freq=FALSE, breaks=60); #plot(density(x), xlim = c(1, 100))<br>
+> plot(ecdf(x))<br>
+</code>
+
+<img src="A-r.png">
+
+ <br><br> Zadanie <b>C</b>. Histogram: <br>
+
+<img src="C-r.png">
+
+
+ <br><br> Zadanie <b>D</b>. Wykres rozkładu prawdopodobieństwa: <br>
+
+<img src="D-r.png">
+
+ <br><br> Zadanie <b>E</b>. Wykres dystrybuanty: <br>
+
+<img src="E-r.png">
+
+
+<h2>MATLAB</h2>
+
+Instrukcje związane z licencją studencką.
+
+<br><br> Zadanie <b>A</b>. Wykresy typu boxplot: <br>
+
+<br><i>Rozwiązanie:</i><br>
+<code>
+> boxplot(X,gr); 
+</code>
+<br> <img src="A.png">
+
+<br><br> Zadanie <b>C</b>. Wykres typu histogram: <br>
+
+<br><i>Rozwiązanie:</i><br>
+<code>
+> histogram(X,11);
+</code>
+
+<br> <img src="C.png">
+
+<br><br> Zadanie <b>E</b>. Wykres dystrybuanty: <br>
+
+<br><i>Rozwiązanie:</i><br>
+<code>
+> plot(x,f); 
+</code>
+
+<br> <img src="E.png">
+
+<!--[<a href="https://jerzro.github.io/labmat3/lab1">1</a>] [<a href="https://jerzro.github.io/labmat3/lab2">2</a>] [<a href="https://jerzro.github.io/labmat3/lab3">3</a>] [<a href="https://jerzro.github.io/labmat3/lab4odp">4</a>] [<a href="https://jerzro.github.io/labmat3/lab5">5</a>]-->
+
