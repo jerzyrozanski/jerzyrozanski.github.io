@@ -8,15 +8,13 @@ Aplikacje używane w pracowni komputerowej (do wyboru):
 </ul>
 </ul>
 
-<br>
-
 <h2>Excel/VBA</h2>
 
 Uwagi dotyczące rozwiązań dla zadań przygotowawczych przekazywane są podczas zajęć.
 
 <h2>R</h2>
 
-Pobranie danych z arkusza lab0.xls dla wszystkich przykładów: <br>
+Pobranie danych z arkusza lab0.xls<br>
 
 <code> 
 > library(readxl) <br>
@@ -24,11 +22,11 @@ Pobranie danych z arkusza lab0.xls dla wszystkich przykładów: <br>
 > head(X) <br>
 </code>
 
-<br> Zadanie <b>A</b>. Wykresy typu boxplot: <br>
+<br> Zadanie <b>A</b>. Wykresy typu skrzynka i wąsy: <br>
 
 <br><i>Rozwiązanie:</i><br>
 <code>
-> x=X$wiek; y=X$wykształcenie; <br>
+> x=X$wiek; y=X$wykształcenie <br>
 > boxplot(x~y) <br>
 </code>
 
